@@ -89,7 +89,6 @@ vault-init-curl: #target
 		| jq > keys.json
 
 
-
 ##########
 # VAULT UNSEAL
 #

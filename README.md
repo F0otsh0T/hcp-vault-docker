@@ -61,13 +61,15 @@ https://www.vaultproject.io/docs/configuration/storage/filesystem
     ```
     vault login <token>
     ```
-    >  If you are successfully logged into **Vault** CLI via initial token but get errors like "*Code: 403. Errors: * permission denied*" when executing **Vault** CLI commands, you may need to "```tidy```" your **Vault** tokens as per:
-    > - https://github.com/hashicorp/vault/issues/3859#issuecomment-361089610
-    > - https://github.com/hashicorp/vault/issues/2661
-    > - Command to tidy tokens:
-    >   ```
-    >   curl -H "X-Vault-Token: $VAULT_TOKEN" -X POST http://127.0.0.1:8200/v1/auth/token/tidy
-    >   ```
+- Set your environment variables for ```VAULT_ADDR``` and ```VAULT_TOKEN```
+
+> If you are successfully logged into **Vault** CLI via initial token but get errors like "*Code: 403. Errors: * permission denied*" when executing **Vault** CLI commands, you may need to "```tidy```" your **Vault** tokens as per:
+> - https://github.com/hashicorp/vault/issues/3859#issuecomment-361089610
+> - https://github.com/hashicorp/vault/issues/2661
+> - Command to tidy tokens:
+>   ```
+>   curl -H "X-Vault-Token: $VAULT_TOKEN" -X POST http://127.0.0.1:8200/v1/auth/token/tidy
+>   ```
 - Upon **Vault** service restart (or host node reboot), you will need to unseal again (no need to ```vault-init #target```). Run make against the ```vault-unseal #target``` to unseal **Vault** assuming ```keys.json``` file is available for it to parse the *Unseal Key*(s).
     ```
     make -f Makefile vault-unseal

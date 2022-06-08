@@ -119,4 +119,4 @@ The ```init-unseal.sh``` script will perform:
 [Dev Mode](#dev-mode)
 [File Volume Mode](#file-volume-mode)
 [References](#references)
-[Appendis](#appendix)
+[Appendix](#appendix)

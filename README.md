@@ -68,7 +68,7 @@ https://www.vaultproject.io/docs/configuration/storage/filesystem
     >   ```
     >   curl -H "X-Vault-Token: $VAULT_TOKEN" -X POST http://127.0.0.1:8200/v1/auth/token/tidy
     >   ```
-- Upon **Vault** service restart (or host node reboot), you will need to unseal again (no need to ```init```) so run the ```~/unseal.sh``` to unseal. This script assumes the ```keys.json``` file is available for it to parse.
+- Upon **Vault** service restart (or host node reboot), you will need to unseal again (no need to ```vault-init #target```). Run ```make -f Makefile vault-unseal``` to kick off the *make target* to unseal **Vault** (assumes ```keys.json``` file is available for it to parse the *Unseal Key*).
     ```
     chmod 754 unseal.sh
     ./unseal.sh

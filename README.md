@@ -18,6 +18,7 @@ This is an attempt to document how to spin up a quick Open-Source instance of **
 > **NOTE**: In this mode, the data is **NOT** persistent
 
 https://www.vaultproject.io/docs/concepts/dev-server
+https://www.vaultproject.io/docs/configuration/storage/in-memory
 
 - Start up **Vault** in "dev" mode in Docker Runtime:
 
@@ -27,6 +28,8 @@ https://www.vaultproject.io/docs/concepts/dev-server
 - This will auto-unseal with access via Admin or Root token == ```root```
 
 ## File Volume Mode
+
+https://www.vaultproject.io/docs/configuration/storage/filesystem
 
 > **NOTE**: This is inherently **NOT** secure and should only be used for development / prototyping purposes only.
 
@@ -38,23 +41,21 @@ https://www.vaultproject.io/docs/concepts/dev-server
     ```
     make -f Makefile vault-setup-volume
     ```
-- Copy the ```~/vault.json``` configuration file to the ```${volume}/vault/config``` directory you created. This will pass configuration values to start **Vault**
+- **Vault** Configuration: ~~Copy the ```~/config.json``` configuration file to the ```${volume}/vault/config``` directory you created.~~ This has been covered in the Makefile ```vault-setup-volume: #target``` & will pass configuration values to start **Vault**
 - Start up **Vault** in Docker Runtime:
     ```
     make -f Makefile vault-setup
     ```
-- Inititiate and unseal **Vault**
-  - Reference: https://github.com/MarkNjunge/vault-docker/blob/master/1-unseal.sh
-  - The ```init-unseal.sh``` script will perform:
-    - ```vault operator init```
-    - Dump Shamir *Unseal Key*(s) and *Initial Root Token* into ```keys.txt``` file 
-    - ```vault operator unseal```
-  - Run ```init-unseal.sh``` script or do steps in the script manually
+- Inititiate and Unseal **Vault**
+  - ```vault operator init```: Initializes Vault and dumps output to ```keys.json```
     ```
-    chmod +x init-unseal.sh
-    ./init-unseal.sh
+    make -f Makefile vault-init
     ```
-- Log in to Vault with your new *Initial Root Token* (in ```keys.txt``` file)
+  - ```vault operator unseal```: Unseals Vault with values from ```keys.json```
+    ```
+    make -f Makefile vault-unseal
+    ```
+- Log in to Vault with your new *Initial Root Token* (in ```keys.json``` file)
     ```
     vault login <token>
     ```
@@ -65,9 +66,9 @@ https://www.vaultproject.io/docs/concepts/dev-server
     >   ```
     >   curl -H "X-Vault-Token: $VAULT_TOKEN" -X POST http://127.0.0.1:8200/v1/auth/token/tidy
     >   ```
-- Upon **Vault** service restart (or host node reboot), you will need to unseal again (no need to ```init```) so run the ```~/unseal.sh``` to unseal. This script assumes the ```keys.txt``` file is available for it to parse.
+- Upon **Vault** service restart (or host node reboot), you will need to unseal again (no need to ```init```) so run the ```~/unseal.sh``` to unseal. This script assumes the ```keys.json``` file is available for it to parse.
     ```
-    chmod +x unseal.sh
+    chmod 754 unseal.sh
     ./unseal.sh
     ```
 
@@ -75,21 +76,32 @@ https://www.vaultproject.io/docs/concepts/dev-server
 ## General Notes
 
 At this point, it would be good to do the following:
-- Save the Shamir *Unseal Key*(s) & *Initial Root Token* in the ```keys.txt``` somewhere safe
+- Save the Shamir *Unseal Key*(s) & *Initial Root Token* in the ```keys.json``` somewhere safe
 - Create another token or ```userpass``` account with **admin** level policy
 
 ## References
 
 - https://www.vaultproject.io/docs/concepts/dev-server
-- https://github.com/MarkNjunge/vault-docker/blob/master/1-unseal.sh
+- https://www.vaultproject.io/docs/configuration/storage
 - https://github.com/hashicorp/vault/issues/3859#issuecomment-361089610
 - https://github.com/hashicorp/vault/issues/2661
+- https://github.com/jacobm3/vault-local-demo/blob/9f5cce33ba34ff2cde1bfe2183bdeca6251421f0/reinit.sh#L21
+- https://github.com/MarkNjunge/vault-docker/blob/master/1-unseal.sh
 
 
 
+## Appendix
 
-
-
+DEPRECATED:
+The ```init-unseal.sh``` script will perform:
+    - ```vault operator init```
+    - Dump Shamir *Unseal Key*(s) and *Initial Root Token* into ```keys.json``` file 
+    - ```vault operator unseal```
+  - Run ```init-unseal.sh``` script or do steps in the script manually
+    ```
+    chmod 754 init-unseal.sh
+    ./init-unseal.sh
+    ```
 
 
 
@@ -107,3 +119,4 @@ At this point, it would be good to do the following:
 [Dev Mode](#dev-mode)
 [File Volume Mode](#file-volume-mode)
 [References](#references)
+[Appendis](#appendix)

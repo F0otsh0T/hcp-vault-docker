@@ -97,12 +97,12 @@ vault-init-curl: #target
 #	# Method Origin: https://github.com/jacobm3/vault-local-demo/blob/9f5cce33ba34ff2cde1bfe2183bdeca6251421f0/reinit.sh#L21
 vault-unseal: #target
 #	vault operator unseal $(jq -r .unseal_keys_b64[0] < keys.json)
-	$(shell chmod 754 unseal-cli.sh)
-	$(shell ./unseal-cli.sh)
+	chmod 754 unseal-cli.sh
+	./unseal-cli.sh
 
 vault-unseal-curl: #target
 #	vault operator unseal $(jq -r .keys_base64[0] < keys.json)
 #	$(shell chmod 754 unseal-curl.sh && ./unseal-curl.sh)
-	$(shell chmod 754 unseal-curl.sh)
-	$(shell ./unseal-curl.sh)
+	chmod 754 unseal-curl.sh
+	./unseal-curl.sh
 

@@ -50,7 +50,7 @@ vault-setup-dev: #target
 # MAY NEED TO ENABLE FILE SHARING TO DOCKER VIA:
 # DOCKER >> PREFERENCES >> RESOURCES >> FILE SHARING
 ##########
-vault-setup-volume: #target
+vault-volume: #target
 #	# Volume directories chosen here are arbitrary.
 #	# You can create and point to whatever directory you want.
 #	# These will be used to mount into the Vault Application.

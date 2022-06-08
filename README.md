@@ -41,9 +41,9 @@ https://www.vaultproject.io/docs/configuration/storage/filesystem
     ```
     **OR**
     ```
-    make -f Makefile vault-setup-volume
+    make -f Makefile vault-volume
     ```
-- **Vault** Configuration: ~~Copy the ```~/config.json``` configuration file to the ```${volume}/vault/config``` directory you created.~~ This has been covered in the Makefile ```vault-setup-volume: #target``` & will pass configuration values to start **Vault**
+- **Vault** Configuration: ~~Copy the ```~/config.json``` configuration file to the ```${volume}/vault/config``` directory you created.~~ This has been covered in the Makefile ```vault-volume: #target``` & will pass configuration values to start **Vault**
 - Start up **Vault** in Docker Runtime:
     ```
     make -f Makefile vault-setup

@@ -1,4 +1,5 @@
 # [HASHICORP VAULT][OSS] Docker
+
 Running **Vault** in Docker for ***DEVELOPMENT PURPOSES ONLY***
 
 ## Introduction
@@ -6,6 +7,7 @@ Running **Vault** in Docker for ***DEVELOPMENT PURPOSES ONLY***
 This is an attempt to document how to spin up a quick Open-Source instance of **Vault** in Docker for development purposes.
 
 ## Prerequisites
+
 - Docker
 - Vault CLI
 - make
@@ -79,6 +81,7 @@ At this point, it would be good to do the following:
 - Save the Shamir *Unseal Key*(s) & *Initial Root Token* in the ```keys.json``` somewhere safe
 - Create another token or ```userpass``` account with **admin** level policy
 
+
 ## References
 
 - https://www.vaultproject.io/docs/concepts/dev-server
@@ -87,7 +90,6 @@ At this point, it would be good to do the following:
 - https://github.com/hashicorp/vault/issues/2661
 - https://github.com/jacobm3/vault-local-demo/blob/9f5cce33ba34ff2cde1bfe2183bdeca6251421f0/reinit.sh#L21
 - https://github.com/MarkNjunge/vault-docker/blob/master/1-unseal.sh
-
 
 
 ## Appendix
@@ -103,16 +105,7 @@ The ```init-unseal.sh``` script will perform:
     ./init-unseal.sh
     ```
 
-
-
-
-
-
-
-
-
-
-
+## 
 
 [Introduction](#introduction)
 [Prerequisites](#prerequisites)

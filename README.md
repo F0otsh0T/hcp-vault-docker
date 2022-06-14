@@ -85,6 +85,7 @@ At this point, it would be good to do the following:
 
 ## References
 
+- https://hub.docker.com/_/vault
 - https://www.vaultproject.io/docs/concepts/dev-server
 - https://www.vaultproject.io/docs/configuration/storage
 - https://github.com/hashicorp/vault/issues/3859#issuecomment-361089610

@@ -35,6 +35,8 @@ https://www.vaultproject.io/docs/configuration/storage/filesystem
 
 > **NOTE**: This is inherently **NOT** secure and should only be used for development / prototyping purposes only.
 
+Steps documented in the steps below can all be done in one command by running ```make``` against the ```vault-setup-all``` target: ```make -f Makefile vault-set-all```
+
 - Create directories on your node that will be mounted into the **Vault** Docker Container
     ```
     mkdir -p ~/volume/vault/config ~/volume/vault/file ~/volume/vault/logs ~/volume/vault/tls

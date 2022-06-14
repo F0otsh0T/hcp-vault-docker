@@ -8,12 +8,14 @@ https://hub.docker.com/_/vault
 
 ## Files
 
+```
 .
 ├── data.tf
 ├── main.tf
 ├── outputs.tf
 ├── variables.tf
 └── versions.tf
+```
 
 ## Requirements
 

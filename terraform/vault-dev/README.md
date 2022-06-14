@@ -2,9 +2,9 @@
 
 ## References
 
-https://registry.terraform.io/providers/hashicorp/helm
-https://github.com/hashicorp/terraform-provider-helm
-https://hub.docker.com/_/vault
+- https://registry.terraform.io/providers/hashicorp/helm
+- https://github.com/hashicorp/terraform-provider-helm
+- https://hub.docker.com/_/vault
 
 ## Files
 

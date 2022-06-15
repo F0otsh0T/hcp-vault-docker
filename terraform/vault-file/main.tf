@@ -4,12 +4,12 @@
 
 resource "null_resource" "cleanup" {
   provisioner "local-exec" {
-    #    command = "rm -rf ${var.path_vault_file}"
-    command = "mv ${var.path_vault_file} /tmp"
-  }
-  provisioner "local-exec" {
     #    command = "rm -rf ${var.path_vault_config}"
     command = "mv ${var.path_vault_config} /tmp"
+  }
+  provisioner "local-exec" {
+    #    command = "rm -rf ${var.path_vault_file}"
+    command = "mv ${var.path_vault_file} /tmp"
   }
 }
 
@@ -19,25 +19,30 @@ provider "local" {
   # Configuration options
 }
 
-resource "local_file" "vault-file" {
-  depends_on = [
-    null_resource.cleanup
-  ]
-  content = "foobar"
-  #  filename = "${path.module}/foo"
-  filename        = "${var.path_vault_file}/foo.bar"
-  file_permission = "0600"
-}
-
 resource "local_file" "vault-config" {
-  #  content  = "foobar"
-  #  filename = "${path.module}/foo"
   depends_on = [
     null_resource.cleanup
   ]
   source          = "${path.root}/config.json"
   filename        = "${var.path_vault_config}/config.json"
   file_permission = "0644"
+  provisioner "local-exec" {
+    when = destroy
+    command = "mv ${dirname(self.filename)} /tmp"
+  }
+}
+
+resource "local_file" "vault-file" {
+  depends_on = [
+    null_resource.cleanup
+  ]
+  content = "foobar"
+  filename        = "${var.path_vault_file}/foo.bar"
+  file_permission = "0600"
+  provisioner "local-exec" {
+    when = destroy
+    command = "mv ${dirname(self.filename)} /tmp"
+  }
 }
 
 /* resource "local_sensitive_file" "vault-sensitive-file" {

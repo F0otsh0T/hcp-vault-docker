@@ -25,7 +25,7 @@ variable "docker_port_external" {
   type        = number
   description = "Specify Vault External Port Number"
   sensitive   = false
-  default     = "9200"
+  default     = "8200"
 }
 
 variable "docker_restart" {

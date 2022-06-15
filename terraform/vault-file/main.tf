@@ -83,7 +83,6 @@ resource "docker_container" "vault" {
     container_path = "/vault/config"
 #    volume_name = "vault-config"
   }
-
   volumes {
     host_path = dirname(local_file.vault-file.filename)
     container_path = "/vault/file"

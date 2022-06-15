@@ -6,11 +6,11 @@
 } */
 
 output "dirname_vault_config" {
-  value=dirname(local_file.vault-config.filename)
+  value = dirname(local_file.vault-config.filename)
 }
 
 output "dirname_vault_file" {
-  value=dirname(local_file.vault-file.filename)
+  value = dirname(local_file.vault-file.filename)
 }
 
 

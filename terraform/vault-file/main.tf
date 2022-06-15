@@ -11,10 +11,6 @@ resource "null_resource" "cleanup" {
   }
 }
 
-output "cleanup" {
-  value=null_resource.cleanup
-}
-
 ################################################
 
 provider "local" {

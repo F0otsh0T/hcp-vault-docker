@@ -45,7 +45,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="docker_tag"></a> [docker_tag](#) | Vault Version or Docker Tag |  | 1.9.4 | no |
+| <a name="docker_tag"></a> [docker_tag](#) | Vault Version or Docker Tag |  | 1.9.5 | no |
 | <a name="container_name"></a> [container_name](#) | Name for Docker Container |  | vault-dev | no |
 | <a name="docker_port_internal"></a> [docker_port_internal](#) | Port Internal for Docker Container |  | 8200 | no |
 | <a name="docker_port_external"></a> [docker_port_external](#) | Port External for Docker Container |  | 8200 | no |

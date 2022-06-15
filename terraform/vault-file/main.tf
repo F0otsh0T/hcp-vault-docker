@@ -3,15 +3,12 @@
 ################################################
 
 resource "null_resource" "cleanup" {
-
  provisioner "local-exec" {
     command = "rm -rf ${var.path_vault_file}"
   }
-
  provisioner "local-exec" {
     command = "rm -rf ${var.path_vault_config}"
   }
-
 }
 
 output "cleanup" {

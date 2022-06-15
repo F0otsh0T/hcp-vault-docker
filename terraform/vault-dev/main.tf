@@ -21,8 +21,8 @@ resource "docker_container" "vault" {
     add = ["IPC_LOCK"]
   }
   env = [
-#    "VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:${var.docker_port_internal}",
-#    "VAULT_DEV_ROOT_TOKEN_ID=root"
+    #    "VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:${var.docker_port_internal}",
+    #    "VAULT_DEV_ROOT_TOKEN_ID=root"
   ]
   command = [
     "server",

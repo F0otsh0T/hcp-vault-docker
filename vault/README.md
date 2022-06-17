@@ -1,6 +1,6 @@
-# [HASHICORP VAULT][OSS] Docker
+# INFRA // HASHICORP VAULT OSS in Docker
 
-Running **Vault** in Docker for ***DEVELOPMENT PURPOSES ONLY***
+Testing or Prototype Environment // Running **Vault** in Docker for ***DEVELOPMENT PURPOSES ONLY***
 
 ## Introduction
 

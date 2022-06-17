@@ -1,4 +1,6 @@
-# INFRA // K3D - Kubernetes Environment for Applications
+# INFRA // K3D 
+
+Rancher K3s Kubernetes Environment in Docker
 
 ##
 

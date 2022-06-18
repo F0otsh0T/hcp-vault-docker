@@ -21,3 +21,11 @@ Testbed consisting of:
 └── vault
 ```
 
+## SEQUENCE
+
+Order of Testbed Spin Up:
+1. Vault
+2. K3d
+3. NGINX
+
+

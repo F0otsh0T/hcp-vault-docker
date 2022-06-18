@@ -1,6 +1,7 @@
 ---
 # HELM VALUES
-# NGINX 
+# NGINX
+# https://github.com/bitnami/charts/blob/master/bitnami/nginx/values.yaml
 
 image:
   registry: docker.io

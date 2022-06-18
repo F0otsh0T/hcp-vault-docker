@@ -6,7 +6,7 @@
 Testbed consisting of:
 - Vault in Docker
 - K3d/K3s Kubernetes Runtime
-- Application(s)
+- Application(s): NGINX
 
 ## REFERENCES
 

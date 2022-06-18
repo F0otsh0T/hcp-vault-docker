@@ -1,5 +1,6 @@
 # HCP VAULT - INFRA // TESTBED
 
+HashiCorp Vault (OSS) Testbed
 
 ## INTRODUCTION
 

@@ -1,0 +1,24 @@
+---
+# HELM VALUES
+# NGINX 
+
+image:
+  registry: docker.io
+  repository: bitnami/nginx
+#  repository: dwdraju/alpine-curl-jq
+  tag: 1.22.0-debian-11-r3
+#  tag: latest
+#  tag: sha256:770e91cabcaa0cb66fa0f3627b1593b3b9f8f416fba893f473040e0071219272
+  pullPolicy: IfNotPresent
+#  pullPolicy: Always
+
+service:
+#  type: ClusterIP
+#  type: LoadBalancer
+  type: NodePort
+  nodePorts:
+    http: "30080"
+    https: "30443"
+  targetPort:
+    http: http
+    https: https

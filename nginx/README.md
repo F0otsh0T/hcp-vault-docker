@@ -1,6 +1,6 @@
-# INFRA // K3D 
+# INFRA // NGINX
 
-Rancher K3s Kubernetes Environment in Docker
+NGINX Web Service Deployment via Helm
 
 ## References
 
@@ -18,6 +18,7 @@ Rancher K3s Kubernetes Environment in Docker
     │   └── local.tfvars
     ├── main.tf
     ├── outputs.tf
+    ├── values.yaml
     ├── variables.tf
     └── versions.tf
 ```

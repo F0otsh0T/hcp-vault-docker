@@ -2,8 +2,9 @@
 
 ## References
 
-https://registry.terraform.io/providers/pvotal-tech/k3d
-https://github.com/pvotal-tech/terraform-provider-k3d
+- https://www.terraform.io/cli/run
+- https://registry.terraform.io/providers/pvotal-tech/k3d
+- https://github.com/pvotal-tech/terraform-provider-k3d
 
 ## Files
 

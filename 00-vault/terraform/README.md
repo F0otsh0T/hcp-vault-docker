@@ -36,3 +36,4 @@
 
 ~~As of this release, **Terraform** state is not aware of any files written by **Vault** in the ```var.path_vault_file``` specified path so you may need to clean those directories up manually between spinning up **Vault** File Mode instances. If the directory is not cleaned up, the new instance will just mount the old files.~~
 
+[[]]

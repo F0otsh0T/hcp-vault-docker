@@ -1,9 +1,10 @@
-# INFRA // Application - Nginx
+# INFRA // Application - NGINX
 
 ##
 
 - https://registry.terraform.io/providers/hashicorp/helm
 - https://github.com/hashicorp/terraform-provider-helm
+- https://artifacthub.io/packages/helm/bitnami/nginx
 - https://github.com/bitnami/charts/tree/master/bitnami/nginx/
 
 ## 
@@ -23,11 +24,11 @@
 ## Requirements
 
 - Docker
-- helm
+- helm 3.2.0+
 - helm cli
 - k3s
 - k3d
-- k8s
+- k8s 1.19+
 - kubectl
 - Terraform
 
@@ -45,22 +46,23 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [k3d.k3d_cluster](https://registry.terraform.io/providers/pvotal-tech/k3d/latest/docs/resources/cluster) | resource |
+| [helm.helm_release](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="my_cluster"></a> [my_cluster](#) | Name for Docker Container |  | my-cluster | no |
-| <a name="arg_tls_san"></a> [arg_tls_san](#)* | Specify argument to pass for --k3s-arg tls-san |  | 192.168.65.2 | yes |
-| <a name="arg_tls_nodefilter_group"></a> [arg_tls_nodefilter_group](#) | Specify argument to pass for --k3s-arg nodefilter group |  | server (validation) | no |
+| <a name="helm_release"></a> [helm_release](#) | Helm Release |  | mynginx1 | no |
+| <a name="helm_release_repository"></a> [helm_release_repository](#) | Helm Release Repository |  | https://charts.bitnami.com/bitnami| yes |
+| <a name="helm_release_chart"></a> [helm_release_chart](#) | Helm Release Chart |  | nginx | no |
+| <a name="helm_release_version"></a> [helm_release_version](#) | Helm Release Version |  | 12.0.4 | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="k3d_context"></a> [k3d_context](#) | n/a |
+| <a name=""></a> [](#) | n/a |
 
 ## Appendix
 
-`*`This is important for Vault to trust the K8s Cert
+[[]]

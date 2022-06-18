@@ -2,23 +2,24 @@
 
 Rancher K3s Kubernetes Environment in Docker
 
-##
-
-https://registry.terraform.io/providers/pvotal-tech/k3d
-https://github.com/pvotal-tech/terraform-provider-k3d
+## References
 
 
 
+## Files
 
 ```
 .
-├── main.tf
-├── modules
-│   ├── docker
-│   └── k3d
-├── outputs.tf
-├── variables.tf
-└── versions.tf
+├── README.md
+└── terraform
+    ├── README.md
+    ├── data.tf
+    ├── env
+    │   └── local.tfvars
+    ├── main.tf
+    ├── outputs.tf
+    ├── variables.tf
+    └── versions.tf
 ```
 
 

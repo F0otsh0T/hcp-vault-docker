@@ -2,8 +2,9 @@
 
 ## References
 
-- https://registry.terraform.io/providers/hashicorp/helm
-- https://github.com/hashicorp/terraform-provider-helm
+- https://www.terraform.io/cli/run
+- https://learn.hashicorp.com/collections/terraform/docker-get-started
+- https://registry.terraform.io/providers/kreuzwerker/docker
 - https://hub.docker.com/_/vault
 
 ## Files

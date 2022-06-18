@@ -12,6 +12,7 @@ Testbed consists of:
 ## REFERENCES
 
 - https://www.terraform.io/cli/run
+- https://learn.hashicorp.com/collections/terraform/docker-get-started
 
 ## DIRECTORIES
 

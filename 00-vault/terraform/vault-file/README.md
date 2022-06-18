@@ -10,6 +10,9 @@
 
 ```
 .
+├── README.md
+├── env
+│   └── local.tfvars
 ├── data.tf
 ├── main.tf
 ├── outputs.tf

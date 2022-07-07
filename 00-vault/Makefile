@@ -16,6 +16,11 @@
 
 #SHELL := /bin/bash
 
+################################
+# DEFAULTS
+################################
+default: help
+
 ##########
 # CLEAN
 ##########
@@ -107,4 +112,25 @@ vault-unseal-curl: #target
 #	$(shell chmod 754 unseal-curl.sh && ./unseal-curl.sh)
 	chmod 754 unseal-curl.sh
 	./unseal-curl.sh
+
+################################
+# HELP
+# REF GH @ jen20/hashidays-nyc/blob/master/terraform/GNUmakefile
+################################
+.PHONY: help
+help: #target ## [DEFAULT] Display help for this Makefile.
+	@echo "Valid make targets:"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-15s\033[0m %s\n", $$1, $$2}'
+
+check_defined = \
+		$(strip $(foreach 1,$1, \
+		$(call __check_defined,$1,$(strip $(value 2)))))
+__check_defined = \
+		$(if $(value $1),, \
+		$(error Undefined $1$(if $2, ($2))))
+
+
+
+
+
 

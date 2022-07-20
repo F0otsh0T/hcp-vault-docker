@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# Script by https://github.com/nicklhw
+
 set -euo pipefail
 
 sleep 5

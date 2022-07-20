@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Script by https://github.com/nicklhw
+
 # This scripts detects the IP address for vault servers, writes it to a config file, then restarts Vault
 for server in $@
 do

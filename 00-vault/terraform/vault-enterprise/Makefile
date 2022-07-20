@@ -42,7 +42,7 @@ clean-all: clean clean-volume #target ## Clean All
 vault-all: vault-setup vault-init #target ## All Setup Targets for Vault Services
 
 vault-setup: #target ## Spin Up Vault Resources
-	@terraform apply -auto-approve
+	@terraform init && terraform apply -auto-approve
 
 ################################
 # VAULT INIT

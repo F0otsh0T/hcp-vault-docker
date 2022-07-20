@@ -50,7 +50,7 @@ vault-setup: #target ## Spin Up Vault Resources
 ################################
 vault-init: #target ## Initialize Vault
 #	# Initiate Vault with 1 Unseal Key Shares & 1 Threshold to Unseal
-#	# Method Origin: https://github.com/jacobm3/vault-local-demo/blob/9f5cce33ba34ff2cde1bfe2183bdeca6251421f0/reinit.sh#L21
+#	# Method Origin: https://github.com/nicklhw/vault-docker-compose
 	@cd data/scripts && \
 	chmod 754 *.sh && \
 	./init.sh

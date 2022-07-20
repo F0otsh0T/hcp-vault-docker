@@ -49,6 +49,7 @@ This spins up:
 - https://learn.hashicorp.com/collections/terraform/docker-get-started
 - https://registry.terraform.io/providers/kreuzwerker/docker
 - https://hub.docker.com/_/vault
+- https://github.com/nicklhw/vault-docker-compose/tree/master/docker-compose
 
 ## Files
 

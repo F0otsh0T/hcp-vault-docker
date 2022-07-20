@@ -15,7 +15,7 @@ export VAULT_S1_IP=$(docker inspect vault_s1 -f '{{range .NetworkSettings.Networ
 echo "Init and unseal vault_s1"
 export VAULT_ADDR=http://localhost:18200
 sleep 5
-vault operator init -format=json -n 1 -t 1 > vault.json
+vault operator init -format=json -n 1 -t 1 | tee vault.json
 
 export VAULT_TOKEN=$(cat vault.json | jq -r '.root_token')
 echo "Root VAULT TOKEN is: $VAULT_TOKEN"

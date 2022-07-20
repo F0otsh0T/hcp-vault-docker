@@ -36,7 +36,9 @@ This spins up:
 ## Caveats
 
 - HCLIC: You will need to provide your own Vault Enterprise License File
+  - e.g. `~/data/vault/shared/vault.hclic`
 - Splunk Hashicorp Vault Application TGZ: You will need to provide this from your Splunk subscription
+  - e.g. `~/data/splunk/hashicorp-vault-app-for-splunk_103.tgz`
 - ARM64/V8 or Mac M1:
   - Splunk does not support ARM64/V8 nor Mac M1 architecture in Docker
   - FluentD may have some issues running in AMD64 Emulation Mode

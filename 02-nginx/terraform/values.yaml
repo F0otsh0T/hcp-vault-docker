@@ -23,3 +23,6 @@ service:
   targetPort:
     http: http
     https: https
+
+serviceAccount:
+  automountServiceAccountToken: true

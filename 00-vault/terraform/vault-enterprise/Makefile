@@ -53,7 +53,9 @@ vault-init: #target ## Initialize Vault
 #	# Method Origin: https://github.com/nicklhw/vault-docker-compose
 	@cd data/scripts && \
 	chmod 754 *.sh && \
+	./api_addr.sh vault_s1 vault_s2 vault_s3 && \
 	./init.sh
+#   # Added line 56 because the same command in the `./init.sh` does not appear to be firing off for some reason...
 
 vault-restart-unseal: vault-restart vault-unseal #target ## Restart and Unseal Vault
 

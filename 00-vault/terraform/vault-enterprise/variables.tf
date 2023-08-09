@@ -112,7 +112,9 @@ variable "container_tag_vault" {
   sensitive   = false
   #default     = "1.9.5"
   #default = "1.9.5-ent"
-  default = "1.11.0-ent"
+  #default = "1.11.0-ent"
+  #default = "1.12.2-ent"
+  default = "1.14.1-ent"
 }
 
 variable "container_name_vault_s1" {

@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-sleep 5
+sleep 15
 
 # Docker compose IP address fix
 ./api_addr.sh vault_s1 vault_s2 vault_s3
@@ -14,7 +14,7 @@ export VAULT_S1_IP=$(docker inspect vault_s1 -f '{{range .NetworkSettings.Networ
 # Init vault_s1
 echo "Init and unseal vault_s1"
 export VAULT_ADDR=http://localhost:18200
-sleep 5
+sleep 10
 vault operator init -format=json -n 1 -t 1 | tee vault.json
 
 export VAULT_TOKEN=$(cat vault.json | jq -r '.root_token')
@@ -27,7 +27,7 @@ export VAULT_ADDR=http://localhost:18200
 export unseal_key=$(cat vault.json | jq -r '.unseal_keys_b64[0]')
 vault operator unseal ${unseal_key}
 
-sleep 5
+sleep 10
 
 # Join vault_s2
 echo "Join vault_s2"
@@ -50,7 +50,7 @@ vault operator unseal ${unseal_key}
 # Reset vault addr and add vault token
 export VAULT_ADDR=http://localhost:18200
 
-sleep 5
+sleep 10
 
 echo "*** Cluster Members ***"
 vault operator members

@@ -64,6 +64,12 @@ microk8s join 192.168.1.230:25000/92b2db237428470dc4fcfc4ebbd9dc81/2c0cb3284b05
 - https://fabianlee.org/2021/07/25/kubernetes-microk8s-cluster-on-ubuntu-using-terraform-and-libvirt/
 - https://github.com/fabianlee/microk8s-nginx-istio
 
+###### Add Nodes
+- https://thenewstack.io/add-nodes-to-your-microk8s-kubernetes-cluster/
+
+###### Observability
+- https://www.server-world.info/en/note?os=Ubuntu_20.04&p=microk8s&f=8
+
 ###### MacOS
 - https://microk8s.io/docs/install-macos
 - https://ubuntu.com/tutorials/install-microk8s-on-mac-os
